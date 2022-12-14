@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Product>
+
+
+
+    @foreach (var item in Model)
+    {
+
+        <div class="table-responsive-sm">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(i => item.ProductId)
+                        @Html.DisplayNameFor(i => item.ProductName)
+
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    }
+    
+   

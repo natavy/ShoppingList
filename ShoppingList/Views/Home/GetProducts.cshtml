@@ -1,0 +1,37 @@
+﻿@model CategoryItem
+
+
+@foreach (var item in Model.Products)
+{
+    <div class="card col-sm" style="width:10em;">
+    <img class="card-img-top" src="/image/product.jpg" alt="image">
+    <p class="card-text text-center">@item.ProductName</p>
+        <form asp-action="Create" asp-controller="List" class="mt-2" method="post">
+
+            @Html.ActionLink("Add To List", "Create", "List", new { id = item.ProductId, item.ProductName}, new { @class = "btn btn-primary ms-4 mb-2" })
+
+        </form>
+       
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+﻿@model ProductCategory
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-sm-8 col-12 text-center">
+            <div class="row">
+            </div>
+        </div>
+    </div>
+
+    <form class="mt-2" method="post">
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-6 col-md-4">
+                    <label asp-for="CategoryId">CategoryId</label>
+                    <input class="form-control" asp-for="CategoryId" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-4">
+                    <label asp-for="Name">Name</label>
+                    <input class="form-control" asp-for="Name" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                <input type="submit" value="Submit" class="btn btn-success genric-btn primary" />
+                <a class="btn btn-primary m-2" onclick="history.go(-1); return false;" href="#">Back</a><br />
+            </div>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ShoppingListItem>
+
+
+
+@if (Model == null || !Model.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+
+                    <th class="text-center">Actions</th>
+                    <th class="text-center">Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <span>There is no data</span>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="bg-light">
+                <tr>
+
+                    <th class="text-center">Name</th>
+
+                    <th class="text-center">Quantity</th>
+
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                       
+                       <td>@item.ProductName</td>
+                        <td><input type="number" id="quantity" value="@item.Quantity"></td>
+                      
+                        <td class="d-flex justify-content-center">
+                           @Html.ActionLink("Remove", "Delete", "List", new { id = item.Id }, new { @class = "btn btn-outline-primary waves-effect btn-sm shadow-none" })
+                       </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+

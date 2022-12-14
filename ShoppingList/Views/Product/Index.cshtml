@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Product>
+
+@Html.ActionLink("New", "Create", "Product", new { @class = "btn btn-outline-primary waves-effect btn-sm shadow-none" })
+
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead class="bg-light">
+            <tr>
+
+                <th class="text-center">Name</th>
+                <th class="text-center">Description</th>
+                <th class="text-center">Category</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryId)
+                    </td>
+                    
+                    <td class="d-flex justify-content-center">
+                        @Html.ActionLink("Edit", "Edit", "Product", new { id = item.ProductId}, new { @class = "btn btn-outline-primary waves-effect btn-sm shadow-none" })
+                        @Html.ActionLink("Delete", "Delete", "Home", new { id = item.CategoryId }, new { @class = "btn btn-outline-danger waves-effect btn-sm shadow-none" })
+
+                        @*<form asp-action="Create" asp-controller="List" class="mt-2" method="post">
+
+                            @Html.ActionLink("AddToList", "Create", "List", new { id = item.ProductId, item.Category.CategoryId,item.ProductName}, new { @class = "btn btn-outline-danger waves-effect btn-sm shadow-none" })
+
+                        </form>*@
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

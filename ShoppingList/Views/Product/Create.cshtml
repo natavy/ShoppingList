@@ -1,0 +1,42 @@
+﻿@model NewProductsModel
+
+<div class="container">
+    <div class="row">
+        <div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <form asp-action="Create" asp-controller="Product" class="mt-2" method="post">
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-6 col-md-4">
+                    <label asp-for="Name">Name</label>
+                    <input class="form-control" asp-for="Name" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-4">
+                    <label asp-for="Description">Description</label>
+                    <input class="form-control" asp-for="Description" type="text">
+                </div>
+            </div>
+            <div class=" row">
+                <div class="col-6 col-md-4">
+                    <label asp-for="CategoryId"></label>
+                    @Html.DropDownListFor(model => model.CategoryId,(SelectList) ViewBag.Categories, " -- Select Category -- ", new{@class="form-select"})
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                <a class="btn btn-primary btn-outline m-2" onclick="history.go(-1); return false;" href="#">Back</a><br />
+            </div>
+            <div class="input-group-prepend">
+                <input type="submit" value="Submit" class="btn btn-outline btn-success genric-btn primary m-2" />
+            </div>
+        </div>
+    </form>
+</div>
